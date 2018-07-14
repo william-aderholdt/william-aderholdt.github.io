@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eee;
+    color: rgb(140, 193, 193);
+    -webkit-font-smoothing: antialiased;
+    font-family: sans-serif;
+    font-weight: 300;
+    height: auto !important;
+    min-height: 100%;
+    text-rendering: optimizeLegibility;
+}
+header {
+    background-color: white;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+header > nav {
+    background-color: white;
+    flex: 1;
+    transform: 300ms all ease;
+}
+
+    header nav > ul {
+        list-style-type: none;
+    }
+
+        header nav > ul > li {
+            border-bottom: 1px dotted rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+            header nav > ul > li > a {
+                display: block;
+                color: rgba(0,0,0,0.65);
+                font-weight: 700;
+                padding: 0.5rem 0;
+                text-decoration: none;
+                transition: 250ms all ease;
+            }
+
+header nav > ul > li:last-of-type {
+    border-bottom: none;
+}
+
+header nav > ul > li > a span.toggle {
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 3rem;
+    color: rgba(0,0,0,0.25);
+    font-size: 0.75em;
+    font-weight: 500;
+    padding: 2px 8px;
+    text-transform: lowercase;
+}
+
+header > nav > ul > li:hover > a {
+    color: rgb(140, 193, 193);
+}
+
+container {
+    display: grid;
+    grid-template-rows: 1fr 75px;
+}
+
+container > content {
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: repeat(3, autofit);   
+    width: 100%;
+    align-content: center;
+    color: black;
+}
+
+container > content > top {
+    grid-row: 1;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 1rem;
+    background-color: white;
+}
+
+container > content > middle {
+    grid-row: 2;
+    display: block;
+    text-align: center;
+    padding: 20px 20px;
+    background-color: white;
+}
+
+container > content > div > {
+    grid-row: 3;
+    text-align: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px; 
+    width: 100%;
+    float: left;
+    background-color: black;
+}
+container > content > div > bottom {
+    flex: 1;
+}
+
+container > content > div > bottom > div {
+    padding: 10px 10px;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid black;
+}
+
+container > content > div > bottom > div > top {
+    grid-row: 1;
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    
+}
+
+container > content > div > bottom > div > bottom {
+    grid-row: 2;
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 200px;
+}
+
+container > content > div > bottom > div > bottom > ol {
+    list-style-type: none;
+}
+
+
+iframe { 
+    width:100%;
+    max-width:500px;
+    height:auto;
+    min-height: 315px;
+    transition: all 0.3s ease;
+ }
+
+container > content > middle {
+    margin-top: 20px;
+}
+
+container > footer {
+    grid-row: 2;
+    margin-top: 20px;
+    display: flex;
+    background-color: white;
+    border-top: 1px solid rgba(0,0,0,.15);   
+    justify-content: flex-end;
+    float: left;
+    flex-direction: column;
+
+}
+
+container > footer > ul {
+    list-style-type: none;
+    display: flex;
+}
+container > footer > ul > li {
+    position: relative;
+}
+container > footer > ul > li > a {
+    display: flex;
+    color: rgba(0,0,0,0.65);
+    font-weight: 700;
+    padding: 0.5rem 10px;
+    text-decoration: none;
+    transition: 250ms all ease;
+}
+container > footer > ul > li > a:hover {
+    color: rgb(140, 193, 193);
+}
+
+container > footer > span {
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 0.9em;
+    color: #444;
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
+
+
+@media all and (min-width: 600px) {
+    
+    header {
+        background-color: white;
+        flex-direction: row;
+        line-height: 50px;
+        padding: 0 3rem;
+        position: fixed;
+        text-align: left;
+        width: 100%;
+    }
+    
+        header > div#logo {
+            background-color: transparent;
+            line-height: 50px;
+        }
+    
+            header > div#logo > h1 {
+                color: rgb(140, 193, 193);
+            }
+    
+    header > nav {
+        background-color: transparent;
+        display: block;
+    }
+    
+        header > nav > ul {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-end;
+        }
+    
+            header nav > ul > li {
+                border-bottom: none;
+            }
+    
+                header nav > ul > li > a {
+                    padding: 0 1.25rem;
+                }
+    
+    
+    header > nav > ul > li:hover > nav {
+        background-color: rgb(51,51,51);
+        border-radius: .25em;
+        box-shadow: 0 2px 8px rgba(0,0,0,.6);
+        display: block;
+        line-height: 3em;
+        right: -50%;
+        width: 196px;
+    }
+
+    container > content > div > bottom {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    container > content >  div > bottom > div {
+        width: 300px;
+        margin-left: 20px;
+    }
+
+    container > content > top {
+        margin-top: 70px;
+    }
+}
